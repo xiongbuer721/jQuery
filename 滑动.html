@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-2.1.1.min.js"></script>
+	<style>
+	#div1 {
+      width: 400px;
+      height: 400px;
+      background-color: red;
+      display: none;
+	}
+	</style>
+	<script>
+     $(function(){
+	    $("#slideDown").click(function(){
+            $("#div1").slideDown(2000);
+	     });
+	    });
+       $(function(){
+	    $("#slideUp").click(function(){
+            $("#div1").slideUp(2000);
+	     });
+	    });
+         $(function(){
+	    $("#slideToggle").click(function(){
+            $("#div1").slideToggle(2000);
+	     });
+	    });
+	</script>
+</head>
+<body>
+	<input type="button" value="滑入" id="slideDown">
+	<input type="button" value="滑出" id="slideUp">
+	<input type="button" value="切换" id="slideToggle">
+	<div id="div1"></div>
+</body>
+</html>

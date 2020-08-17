@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-2.1.1.min.js"></script>
+</head>
+<style>
+    .tab {
+        width: 550px;
+        height: 1000px;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    
+    .tab-list {
+        width: 600px;
+        height: 20px;
+    }
+    
+    .tab-list li {
+        list-style: none;
+        float: left;
+        margin: 10px;
+    }
+    
+    .current {
+        background-color: orangered;
+        color: #ffffff;
+    }
+    
+    .tab_con {
+        width: 500px;
+        height: 400px;
+        border: orchid 1px solid;
+        margin-top: 20px;
+    }
+</style>
+
+<body>
+    <script>
+        $(function() {
+
+            $('.tab-list li').click(function() {
+                //1.点击上部的li，当前li添加current类，其余兄弟移除类
+                //链式编程操作
+                $(this).addClass('current').siblings().removeClass('current');
+                //2.点击的同时。得到当前li的索引号
+                var index = $(this).index();
+                //console.log(index);
+                //3.让下面相应索引号的item显示
+                $('.tab_con .item').eq(index).show().siblings().hide();
+
+            })
+        })
+    </script>
+    <div class="tab">
+        <div class="tab-list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价（50000）</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item" style="display:blcok;">
+                商品介绍模块
+            </div>
+            <div class="item">
+                规格与包装模块
+            </div>
+            <div class="item">
+                售后保障模块
+            </div>
+            <div class="item">
+                商品评价（50000）模块
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

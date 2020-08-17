@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-2.1.1.min.js"></script>
+	<script>
+	 //页面加载起
+	 $(function () {
+	 	//获取按钮，调用点击事件，获取所有的p，设置内容
+	 	$("#btn").click(function() {
+	 		//获取所有的p    标签选择器
+	 		$("p").text("2");
+	 	});
+	 });
+	</script>
+</head>
+<body>
+<input type="button" value="设置内容" id="btn">	
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+</body>
+</html>

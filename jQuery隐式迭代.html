@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-2.1.1.min.js"></script>
+</head>
+
+<body>
+    <div>惊喜不</div>
+    <div>惊喜不</div>
+    <div>惊喜不</div>
+    <div>惊喜不</div>
+    <ul>
+        <li>意外不</li>
+        <li>意外不</li>
+        <li>意外不</li>
+        <li>意外不</li>
+    </ul>
+    <script>
+        //获取四个div
+        //给四个div设置背景颜色为fense,jquery对象不能使用style
+        $('div').css('background', 'pink');
+        //3.隐式迭代就是把匹配的所有的元素内部进行遍历循环，给每一个元素都添加css的样式
+        //给后代添加
+        $('ul li').css('color', 'red');
+    </script>
+</body>
+
+</html>

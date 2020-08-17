@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(function() {
+            //如果针对同一类元素做不同的操作，需要用到遍历元素（类似for，但是比for更强大）
+            //1.each（）方法遍历
+            var sum = 0;
+            var arr = ['red', 'orange', 'blue'];
+            $('div').each(function(i, domEle) {
+                //回调函数第一个参数一定是索引号 可以自己指定索引号名称
+                //回调函数的第二个参数一定死dom元素
+                console.log(i);
+                console.log(domEle);
+                $(domEle).css('color', arr[i]);
+                sum += parseInt($(domEle).text());
+
+
+            })
+            console.log(sum);
+        })
+    </script>
+</body>
+
+</html>

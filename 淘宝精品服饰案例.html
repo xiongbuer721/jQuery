@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="jquery-2.1.1.min.js"></script>
+<style>
+    .wrapper {
+        border: 1px solid orange;
+        width: 500px;
+        height: 245px;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    
+    .left {
+        width: 100px;
+        height: 200px;
+        border: 1px solid orange;
+        display: block;
+    }
+    
+    #content {
+        width: 200px;
+        height: 230px;
+        top: 20px;
+        left: 150px;
+        position: absolute;
+    }
+    
+    .left li {
+        list-style: none;
+        margin: 10px;
+        text-align: center;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    img {
+        width: 200px;
+        height: 200px;
+        border: 1px solid orange;
+        float: left;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <ul class="left">
+            <li><a href="#">呢大衣</a></li>
+            <li><a href="#">毛衣</a></li>
+            <li><a href="#">棉服</a></li>
+            <li><a href="#">女裤</a></li>
+            <li><a href="#">牛仔裤</a></li>
+        </ul>
+        <div id="content">
+            <div>
+                <a href="#"><img src="./imgs/ni.jpg" alt=""></a>
+            </div>
+            <div>
+                <a href="#"><img src="./imgs/mao.jpg" alt=""></a>
+            </div>
+            <div>
+                <a href="#"><img src="./imgs/mian.jpg" alt=""></a>
+            </div>
+            <div>
+                <a href="#"><img src="./imgs/nv.jpg" alt=""></a>
+            </div>
+            <div>
+                <a href="#"><img src="./imgs/niu.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.left li').mouseover(function() {
+            //2.得到当前小li的索引号
+            var index = $(this).index();
+            //3.让我们右侧的盒子根据相应的索引号显示出来
+            $('#content div').eq(index).show();
+            //4.让其余的图片隐藏起来
+            $('#content div').eq(index).siblings('div').hide();
+
+        })
+    </script>
+</body>
+
+</html>

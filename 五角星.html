@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	 .comment {
+         font-size: 100px;
+         color: red;
+        }
+
+    #comment li {
+    	font-size: 100px;
+            float: left;
+            cursor: pointer;
+            color: red;
+        }
+
+	ul {
+		list-style: none;
+	}
+	</style>
+</head>
+<body>
+	<ul id="comment">
+		<li>☆</li>
+		<li>☆</li>
+		<li>☆</li>
+		<li>☆</li>
+		<li>☆</li>
+	</ul>
+</body>
+<script src="jquery-2.1.1.min.js"></script>
+<script>
+$(function() {
+	 var sx_wjx = '★';
+     var kx_wjx = '☆';
+	$("#comment>li").on("mouseenter",function(){
+		$(this).text(sx_wjx).prevAll().text(sx_wjx).end().nextAll().text(kx_wjx);
+
+	}).on("mouseleave",function() {
+		//需求2
+		$("#comment>li").text(kx_wjx);
+	   $('#comment>li[clickCurrent]').text(sx_wjx).prevAll().text(sx_wjx);
+	}).on("click",function() {
+		//需求3
+	$(this).attr('clickCurrent','current').siblings().removeAttr('clickCurrent');
+	});
+});
+</script>
+</html>

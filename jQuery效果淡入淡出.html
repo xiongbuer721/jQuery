@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="jquery-2.1.1.min.js"></script>
+<style>
+    body {
+        background-color: black;
+    }
+    
+    .wap {
+        width: 600px;
+        height: 410px;
+        border: olivedrab 1px solid;
+        position: relative;
+        top: 100px;
+        left: 200px;
+    }
+    
+    .wrap li {
+        list-style: none;
+        border: olivedrab 1px dotted;
+        display: inline-block;
+    }
+    
+    .wrap img {
+        display: block;
+        border: 0;
+    }
+</style>
+
+<body>
+    <script>
+        $(function() {
+            //鼠标进入的时候，其他的li标签透明度0.5
+            $('.wrap li').hover(function() {
+                    $(this).siblings().stop().fadeTo(400, 0.5);
+                },
+                //鼠标离开的时候，其他li的透明度设为1
+
+                function() {
+
+                    $(this).siblings().stop().fadeTo(400, 1);
+                });
+        });
+    </script>
+    <div class="wrap">
+
+        <ul>
+            <li>
+                <a href="#"><img src="./imgs/mao.jpg" alt="" width="200px" height="200px"></a>
+            </li>
+            <li>
+                <a href="#"><img src="./imgs/ni.jpg" alt="" width="200px" height="200px"></a>
+            </li>
+            <li>
+                <a href="#"><img src="./imgs/niu.jpg" alt="" width="200px" height="200px"></a>
+            </li>
+            <br>
+
+            <li>
+                <a href="#"><img src="./imgs/mian.jpg" alt="" width="200px" height="200px"></a>
+            </li>
+            <li>
+                <a href="#"><img src="./imgs/ni.jpg" alt="" width="200px" height="200px"></a>
+            </li>
+            <li>
+                <a href="#"><img src="./imgs/ni.jpg" alt="" width="200px" height="200px"></a>
+            </li>
+
+    </div>
+</body>
+
+</html>

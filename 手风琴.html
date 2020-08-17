@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.grounpTitle {
+		width: 400px;
+		height: 50px;
+		background-color: lightblue;
+	}
+	.menuGrounp {
+		border: 1px solid #999;
+		background-color: #e0ecff;
+	}
+	.menuGrounp >div {
+    height: 200px;
+    background-color: #fff;
+    display: none;
+	}
+	li {
+		display: list-item;
+		text-align: center;
+	}
+	</style>
+	
+</head>
+<body>
+	<div id="dv">
+	   <ul class="grounp">
+	     <li class="menuGrounp">
+	        <span class="grounpTitle">标题1</span>
+	        <div style="display: none">我是弹出来的div1</div>
+	     </li>
+	     <li class="menuGrounp">
+	        <span class="grounpTitle">标题2</span>
+	        <div style="display: none">我是弹出来的div2</div>
+	     </li>
+	     <li class="menuGrounp">
+	        <span class="grounpTitle">标题3</span>
+	        <div style="display: none">我是弹出来的div3</div>
+	     </li>
+	   </ul>
+	</div>
+</body>
+</html>
+<script src="jquery-2.1.1.min.js"></script>
+	
+	<script>
+	$(function() {
+		$(".grounp>.menuGrounp").click(function() {
+			$(this).children('div').show().parent().siblings('li').children('div').hide();
+		}) ;
+	
+	});
+	</script>
